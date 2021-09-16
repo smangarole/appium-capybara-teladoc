@@ -9,7 +9,7 @@ Capybara.server_port = 4723
 Capybara.default_max_wait_time = 30
 
 appium_ios_opts = { appium_lib: {}, caps: {} }
-appium_ios_opts[:appium_lib][:server_url] = 'https://siddharthamdemo1:3iskPrkpEsseiwerAxKB@hub-cloud.browserstack.com/wd/hub'
+appium_ios_opts[:appium_lib][:server_url] = 'your Browserstack URL'
 appium_ios_opts[:appium_lib][:debug] = true
 appium_ios_opts[:caps][:platformName] = ENV['PLATFORM_NAME'] || 'iOS'
 appium_ios_opts[:caps][:platformVersion] = ENV['PLATFORM_VERSION'] || ''
