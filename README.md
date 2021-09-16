@@ -11,7 +11,6 @@ $ gem install bundler
 
 ## Run Tests
 Setup for all tests, regardless of platform and browser:
-```bash
 # Open new terminal window and go to the repo's root directory on your computer
 $ cd path/to/the/repo/appium-capybara-teladoc
 
