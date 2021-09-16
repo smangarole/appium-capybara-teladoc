@@ -6,6 +6,7 @@ using [appium](http://appium.io/),  [capybara](https://github.com/teamcapybara/c
 In order to use this project, the environment must be configured with necessary dependencies.
 
 ## Install bundler gem (in order to execute 'bundle install' from CLI)
+```bash
 $ gem install bundler
 
 ## Run Tests
