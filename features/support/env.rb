@@ -14,11 +14,12 @@ appium_ios_opts[:appium_lib][:debug] = true
 appium_ios_opts[:caps][:platformName] = ENV['PLATFORM_NAME'] || 'iOS'
 appium_ios_opts[:caps][:platformVersion] = ENV['PLATFORM_VERSION'] || ''
 appium_ios_opts[:caps][:deviceName] = ENV['DEVICE_NAME'] || ''
-appium_ios_opts[:caps][:app] = 'bs://8cd7542acadac69b8cbcf0aa802dad31ae559114'
+appium_ios_opts[:caps][:app] = 'bs://appHashId'
 appium_ios_opts[:caps][:automationName] = 'XCUITest'
 appium_ios_opts[:caps][:build] = 'Teladoc App Test'
 appium_ios_opts[:caps][:acceptSslCert] = 'true'
 appium_ios_opts[:caps][:processArguments] = "{\"args\": [],\"env\": {\"TESTING\":\"YES\"}}"
+appium_ios_opts[:caps]['browserstack.appium_version'] = '1.20.2'
 
 Capybara.register_driver(:ios) { |app| Appium::Capybara::Driver.new(app, appium_ios_opts) }
 
