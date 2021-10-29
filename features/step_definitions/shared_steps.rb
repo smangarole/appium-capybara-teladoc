@@ -1,18 +1,11 @@
-require 'selenium-webdriver'
-
-def wait_for
-  Selenium::WebDriver::Wait.new(:timeout => 15).until { yield }
-end
 
 Given(/^I open the app$/) do
 $driver = Capybara.current_session.driver.appium_driver
-$driver.manage.timeouts.implicit_wait = 30
-Capybara.default_max_wait_time = 30
 
-wait_for { $driver.find_element(:accessibility_id, "SWITCH SERVER BUTTON").displayed? }
+appium_wait_until { $driver.find_element(:accessibility_id, "SWITCH SERVER BUTTON").displayed? }
 $driver.find_elements(:accessibility_id, "SWITCH SERVER BUTTON").first.click
 
-wait_for { $driver.find_element(:accessibility_id, "_FormTextField_environment").displayed? }
+appium_wait_until { $driver.find_element(:accessibility_id, "_FormTextField_environment").displayed? }
 $driver.find_elements(:accessibility_id, "_FormTextField_environment").first.click
 
 0...20.times do |i|
@@ -38,9 +31,8 @@ $driver.find_elements(:accessibility_id, "_CallToActionButton_nextButton|LOG IN"
 end
 
 Then(/^the mental health page is displayed$/) do
-puts $driver.get_source
 text = "I\\'ll skip this step"
-wait_for { $driver.find_exact(text).displayed? }
+appium_wait_until { $driver.find_exact(text).displayed? }
 $driver.find_exact(text).click 
 
 # 2 Clicks Required here for 2 diff screens
